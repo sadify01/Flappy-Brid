@@ -109,7 +109,10 @@ score = 0
 numbers = []
 for num in range(0, 10):
     number = pygame.image.load(os.path.join('Flappy Bird', 'assets', f'font_big_{num}.png')).convert_alpha()
-    number = pygame.transform.scale(number, (120, 180))
+    if num == 1:
+        number = pygame.transform.scale(number, (80, 180))
+    else:
+        number = pygame.transform.scale(number, (120, 180))
     numbers.append(number)
 
 hit = pygame.mixer.Sound(os.path.join('Flappy Bird', 'assets', 'sounds', 'hit.ogg'))
